@@ -1,0 +1,13 @@
+{
+  "_schema": "1.0",
+  "_description": "Respostas do Claude Code para o Manus. Claude escreve aqui após processar cada tarefa da queue.json.",
+  "_campos": {
+    "task_id": "ID da tarefa original em queue.json",
+    "respondido_em": "ISO 8601",
+    "status": "concluido | erro | parcial",
+    "resumo": "o que foi feito em 1-2 frases",
+    "detalhes": "resultado completo, links, dados gerados",
+    "proximos_passos": "o que Manus ou Eden deve fazer em seguida (opcional)"
+  },
+  "respostas": []
+}

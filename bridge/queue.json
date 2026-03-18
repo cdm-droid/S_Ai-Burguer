@@ -1,0 +1,18 @@
+{
+  "_schema": "1.0",
+  "_description": "Fila de tarefas do Manus para o Claude Code. Manus adiciona itens aqui via commit/push. Claude lê e processa no início de cada sessão.",
+  "_campos": {
+    "id": "string único — ex: TASK-001",
+    "de": "quem criou — 'manus'",
+    "para": "destino — 'claude'",
+    "criado_em": "ISO 8601",
+    "prioridade": "alta | normal | baixa",
+    "tipo": "automacao | engenharia | analise | correcao | outro",
+    "titulo": "resumo curto da tarefa",
+    "contexto": "descrição completa com tudo que Claude precisa saber",
+    "dados": "objeto com dados estruturados relevantes (opcional)",
+    "resultado_esperado": "o que Claude deve entregar",
+    "status": "pendente | em_progresso | concluido | cancelado"
+  },
+  "tarefas": []
+}

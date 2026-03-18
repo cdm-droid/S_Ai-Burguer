@@ -67,17 +67,31 @@ O Notion é o cérebro compartilhado: ambos os agentes leem e escrevem aqui.
 
 ## Protocolo de Handoff
 
-Quando o Manus identifica uma tarefa de competência do Claude Code:
+### Canal principal — GitHub Bridge
 
-1. Documenta a tarefa na database **📥 Fila para Claude Code** (Notion)
-2. Inclui: contexto completo, dados relevantes, resultado esperado
-3. Notifica o Eden pelo Telegram
+O canal de comunicação entre agentes é o diretório `/bridge` neste repositório.
+Funciona offline: o Manus pode enfileirar tarefas mesmo com a máquina do Eden desligada.
 
-Quando o Claude Code conclui uma tarefa:
+**Quando o Manus identifica uma tarefa de competência do Claude Code:**
 
-1. Documenta o resultado no Notion
-2. Atualiza o status na fila (Pendente → Concluído)
-3. O Manus incorpora o resultado na operação
+1. Fazer `git pull`
+2. Adicionar item em `bridge/queue.json` com status `"pendente"`
+3. Commit + push: `git commit -m "task: TASK-XXX — descrição"`
+4. Notificar o Eden pelo Telegram (opcional, para tarefas urgentes)
+
+**Quando o Claude Code conclui uma tarefa:**
+
+1. Atualizar status em `bridge/queue.json` para `"concluido"`
+2. Adicionar resultado em `bridge/responses.json`
+3. Commit + push: `git commit -m "response: TASK-XXX — concluido"`
+4. O Manus faz `git pull` e incorpora o resultado na operação
+
+**Protocolo completo e exemplos:** ver `bridge/README.md`
+
+### Canal secundário — Notion
+
+A database **📥 Fila para Claude Code** no Notion continua ativa como canal alternativo
+para tarefas que referenciam dados já presentes no Notion (links, páginas, etc.).
 
 ---
 

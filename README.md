@@ -42,14 +42,14 @@ Eden (Telegram)
 - **Notion**: Fichas Técnicas (46 produtos), Checklist de Estoque, Cadastro de Fornecedores, Estoque, Movimentações
 - **Extrato Nubank** (Fev/2026): 305 lançamentos importados e classificados por plano de contas DRE
 - **Baixa de estoque por vendas**: cruzamento automático Anota AI × Fichas Técnicas
+- **Importação de NF-e direto da Sefaz** (Claude Code): pipeline Python completo, operacional
+- **Bridge GitHub** (`/bridge`): canal assíncrono Manus ↔ Claude Code via `queue.json` / `responses.json`
 
 ### 🔄 Em Desenvolvimento (Claude Code)
-- Importação de NF-e direto da Sefaz
 - Sabrina — atendente IA da Saí Burguer
 - Painel web de gestão (cozinhasai)
 
 ### ⏳ Pendente
-- Integração Telegram → Manus (automação de rotinas)
 - Integração Sólides (RH)
 - Preenchimento do Cadastro de Fornecedores
 
@@ -62,6 +62,7 @@ Eden (Telegram)
 /data               → Dados exportados (fichas técnicas, relatórios)
 /integracoes        → Scripts e configs de integração por sistema
 /agentes            → Código e prompts dos agentes (Manus e Sabrina)
+/bridge             → Canal de comunicação Manus ↔ Claude Code (queue.json / responses.json)
 ```
 
 ---
@@ -74,4 +75,4 @@ Eden (Telegram)
 
 ---
 
-*Última atualização: Março/2026*
+*Última atualização: 2026-03-18*
